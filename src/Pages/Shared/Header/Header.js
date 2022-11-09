@@ -1,14 +1,26 @@
-import React from "react";
+import userEvent from "@testing-library/user-event";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../../assets/logo.jpg";
+import { AuthContext } from "../../../contexts/AuthProvider";
 
 const Header = () => {
+  const { logOut, user } = useContext(AuthContext);
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {})
+      .catch((error) => console.error(error));
+  };
   const navItems = (
     <>
       <li className="font-bold">
         <Link to="/">Home</Link>
         <Link to="/blog">Blog</Link>
-        <Link to="/login">Login</Link>
+        {user?.uid ? (
+          <button onClick={handleLogOut}>LogOut</button>
+        ) : (
+          <Link to="/login">Login</Link>
+        )}
       </li>
     </>
   );
