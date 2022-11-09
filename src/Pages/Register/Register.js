@@ -1,10 +1,38 @@
-import React from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import img from "../../assets/images/login/login.webp";
+import { AuthContext } from "../../contexts/AuthProvider";
 
 const Register = () => {
+  const { createUser, updateProfileUser } = useContext(AuthContext);
   const handleRegister = (event) => {
     event.preventDefault();
+    const form = event.target;
+    const name = form.name.value;
+    const photoURL = form.photoURL.value;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    createUser(email, password)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        handleUpdateUserProfile(name, photoURL);
+        form.reset();
+      })
+
+      .catch((err) => console.error(err));
+  };
+  const handleUpdateUserProfile = (name, photoURL) => {
+    const profile = {
+      displayName: name,
+      photoURL: photoURL,
+    };
+    updateProfileUser(profile)
+      .then(() => {})
+      .catch((error) => {
+        console.error(error);
+      });
   };
   return (
     <div className="hero w-full my-20">
@@ -17,12 +45,38 @@ const Register = () => {
           <form onSubmit={handleRegister} className="card-body">
             <div className="form-control">
               <label className="label">
+                <span className="label-text">Name</span>
+              </label>
+              <input
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                className="input input-bordered"
+                required
+              />
+            </div>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Photo URL</span>
+              </label>
+              <input
+                type="text"
+                name="photoURL"
+                placeholder="Your Photo URL"
+                className="input input-bordered"
+                required
+              />
+            </div>
+            <div className="form-control">
+              <label className="label">
                 <span className="label-text">Email</span>
               </label>
               <input
                 type="text"
+                name="email"
                 placeholder="email"
                 className="input input-bordered"
+                required
               />
             </div>
             <div className="form-control">
@@ -30,9 +84,11 @@ const Register = () => {
                 <span className="label-text">Password</span>
               </label>
               <input
-                type="text"
+                type="password"
+                name="password"
                 placeholder="password"
                 className="input input-bordered"
+                required
               />
               <label className="label">
                 <a href="/" className="label-text-alt link link-hover">
