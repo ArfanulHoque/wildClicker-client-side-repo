@@ -3,6 +3,7 @@ import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import img from "../../assets/images/login/login.webp";
 import { AuthContext } from "../../contexts/AuthProvider";
+import { FcGoogle } from "react-icons/fc";
 
 const Login = () => {
   const [error, setError] = useState("");
@@ -91,9 +92,9 @@ const Login = () => {
             <div>
               <button
                 onClick={handleGoogleLogin}
-                className="btn btn-primary w-full"
+                className="btn btn-primary bg-blue-500 w-full"
               >
-                Login with Google
+                <FcGoogle className="text-2xl"></FcGoogle> Login with Google
               </button>
             </div>
           </form>

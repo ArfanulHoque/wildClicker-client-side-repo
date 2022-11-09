@@ -53,7 +53,7 @@ const Header = () => {
         </div>
         <Link to="/" className="btn btn-ghost normal-case text-xl">
           <img className="h-9 rounded-full" src={logo} alt="" />
-          <span className="mx-2 font-bold text-green-600"> wildCap</span>
+          <span className="mx-2 font-bold text-green-600"> wildClicker</span>
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
