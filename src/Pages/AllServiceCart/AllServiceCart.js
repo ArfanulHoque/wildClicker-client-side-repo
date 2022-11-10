@@ -1,13 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
-const ServiceCart = ({ service }) => {
-  const { img, title, price, description } = service;
-
+const AllServiceCart = ({ services }) => {
+  const { img, title, price, description } = services;
   return (
     <div className="card w-96 bg-base-100 shadow-xl m-8">
       <figure>
-        <img src={img} alt="Shoes" />
+        <img src={img} alt="" />
       </figure>
       <div className="card-body">
         <h2 className="card-title h-10">{title}</h2>
@@ -21,4 +19,4 @@ const ServiceCart = ({ service }) => {
   );
 };
 
-export default ServiceCart;
+export default AllServiceCart;
