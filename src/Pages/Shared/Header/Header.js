@@ -16,6 +16,7 @@ const Header = () => {
       <li className="font-bold">
         <Link to="/">Home</Link>
         <Link to="/services">Services</Link>
+        <Link to="/myreview">My Review</Link>
         <Link to="/blog">Blog</Link>
         {user?.uid ? (
           <button onClick={handleLogOut}>LogOut</button>
@@ -61,7 +62,9 @@ const Header = () => {
         <ul className="menu menu-horizontal p-0">{navItems}</ul>
       </div>
       <div className="navbar-end">
-        <button className="btn btn-outline btn-primary">Add review</button>
+        <Link to="/services">
+          <button className="btn btn-outline btn-primary">Booking Now</button>
+        </Link>
       </div>
     </div>
   );

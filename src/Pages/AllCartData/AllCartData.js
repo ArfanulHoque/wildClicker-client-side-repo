@@ -4,7 +4,7 @@ import AllServiceCart from "../AllServiceCart/AllServiceCart";
 const AllCartData = () => {
   const [allServices, setAllServices] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/services")
+    fetch("https://wild-clicker-server.vercel.app/services")
       .then((res) => res.json())
       .then((data) => setAllServices(data));
   }, []);

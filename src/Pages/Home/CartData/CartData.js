@@ -5,7 +5,7 @@ import ServiceCart from "../../Shared/ServiceCart/ServiceCart";
 const CartData = () => {
   const [services, setServices] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/findServices")
+    fetch("https://wild-clicker-server.vercel.app/findServices")
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, []);

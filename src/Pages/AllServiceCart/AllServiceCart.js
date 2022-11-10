@@ -12,7 +12,7 @@ const AllServiceCart = ({ services }) => {
         <p>{description}</p>
         <p>Price: ${price}</p>
         <div className="card-actions justify-end">
-          <button className="btn btn-primary">Buy Now</button>
+          <button className="btn btn-primary">Details</button>
         </div>
       </div>
     </div>
