@@ -34,7 +34,7 @@ const About = () => {
 
       <div className="hero ">
         <div className="hero-content flex-col lg:flex-row-reverse">
-          <img src={img2} className="max-w-sm rounded-lg shadow-2xl" />
+          <img src={img2} className="max-w-xl rounded-lg shadow-2xl" />
           <div>
             <h1 className="text-3xl font-bold">Underwater Photography</h1>
             <p className="py-6">
