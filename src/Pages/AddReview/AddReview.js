@@ -1,14 +1,54 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../../contexts/AuthProvider";
 
-const AddReview = () => {
+const AddReview = ({ data }) => {
+  const { _id, img, title, description, price } = data;
   const { user } = useContext(AuthContext);
+  const handlereview = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const name = `${form.firstName.value} ${form.lastName.value}`;
+    const email = user?.email || "unregistered";
+    const customerImage = user?.photoURL;
+    const phone = form.phone.value;
+    const message = form.message.value;
+
+    const review = {
+      service: _id,
+      serviceName: title,
+      price,
+      customer: name,
+      customerImage,
+      email,
+      phone,
+      message,
+      img,
+    };
+
+    // }
+
+    fetch("https://wild-clicker-server.vercel.app/reviews", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(review),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.acknowledged) {
+          form.reset();
+        }
+      })
+      .catch((er) => console.error(er));
+  };
   return (
     <div>
       <p className="text-4xl font-bold text-center mt-6 text-green-500">
         Add Review
       </p>
-      <form>
+      <form onSubmit={handlereview}>
         <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-2 gap-4 m-10 mb-1">
           <input
             name="firstName"

@@ -1,15 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import img4 from "../../assets/images/banner/banner-6.jpeg";
+import ReviewCart from "./ReviewCart";
 
-const AllReviews = () => {
+const AllReviews = ({ data }) => {
+  const [reviewMyData, setReviewMyData] = useState([]);
+  const { _id } = data;
+  useEffect(() => {
+    fetch(`https://wild-clicker-server.vercel.app/reviews?service=${_id}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setReviewMyData(data);
+      });
+  }, [_id]);
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-      <img className="h-20" src={img4} alt="" />
-      <div className="flex flex-col-reverse font-bold m-6">
-        <p>Name:</p>
-        <p>Email:</p>
-      </div>
-      <p className="font-bold m-6">Review:</p>
+    <div>
+      {reviewMyData.map((review) => (
+        <ReviewCart key={_id} review={review}></ReviewCart>
+      ))}
     </div>
   );
 };

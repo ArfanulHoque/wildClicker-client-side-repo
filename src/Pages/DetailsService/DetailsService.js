@@ -29,8 +29,8 @@ const DetailsService = () => {
           </div>
         </div>
       </div>
-      <AddReview></AddReview>
-      <AllReviews></AllReviews>
+      <AddReview data={data}></AddReview>
+      <AllReviews data={data}></AllReviews>
     </div>
   );
 };
