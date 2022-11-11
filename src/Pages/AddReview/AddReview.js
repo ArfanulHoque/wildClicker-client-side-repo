@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { toast } from "react-toastify";
 import { AuthContext } from "../../contexts/AuthProvider";
 
 const AddReview = ({ data }) => {
@@ -38,6 +39,8 @@ const AddReview = ({ data }) => {
       .then((data) => {
         console.log(data);
         if (data.acknowledged) {
+          toast.success("Add Services Successfully!");
+
           form.reset();
         }
       })

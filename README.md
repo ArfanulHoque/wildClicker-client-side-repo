@@ -1,15 +1,17 @@
 ###Client Side Private repo link
-Click here for the private repo:https://github.com/programming-hero-web-course1/b610-learning-platform-client-side-ArfanulHoque#readme
+Click here for the private repo:https://github.com/Porgramming-Hero-web-course/b6a11-service-review-client-side-ArfanulHoque
 
 ##Server Side Private repo link
-Click here for the private repo: https://github.com/programming-hero-web-course1/b610-lerning-platform-server-side-ArfanulHoque
+Click here for the private repo: https://github.com/Porgramming-Hero-web-course/b6a11-service-review-server-side-ArfanulHoque
 
 #Live website Link:
 click hare for live website:
 
 Features:
-=>In this website you can learn more things about our courses. =>Onetime Authentication system (you can logout or login by using email, google, and github).
-=>This is a secure website. =>You can learn more thing from hare
+=>In this website about a person who has great photography talent
+=> Authentication system (you can logout or login by using email, and google).
+=>This is a secure website.
+=>You can contact for photography
 =>user friendly UI.
 
 I have used for this website:
@@ -23,4 +25,5 @@ I have used for this website:
 =>CSS
 =>HTML
 =>JS
+=>react-photo-view
 =>React-to-pdf Package
