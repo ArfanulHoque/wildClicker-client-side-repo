@@ -1,9 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 import "react-photo-view/dist/react-photo-view.css";
 
 const ServiceCart = ({ service }) => {
+  const services = useLoaderData();
+  console.log(services);
   const { _id, img, title, price, description } = service;
 
   return (
@@ -20,9 +22,9 @@ const ServiceCart = ({ service }) => {
         <p>{description.slice(0, 100)}...</p>
         <p>Price: ${price}</p>
         <div className="card-actions justify-end">
-          {/* <Link to={`/services/${_id}`}>
+          <Link to={`/services/${_id}`}>
             <button className="btn btn-primary">Details</button>
-          </Link> */}
+          </Link>
         </div>
       </div>
     </div>

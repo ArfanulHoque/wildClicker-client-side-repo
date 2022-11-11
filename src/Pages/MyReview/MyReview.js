@@ -1,51 +1,22 @@
-import React, { useContext } from "react";
-import { AuthContext } from "../../contexts/AuthProvider";
+import React from "react";
 
 const MyReview = () => {
-  const { user } = useContext(AuthContext);
-
   return (
-    <div>
-      <form>
-        <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-2 gap-4 m-10 mb-1">
-          <input
-            name="firstName"
-            type="text"
-            placeholder="First Name"
-            className="input input-bordered w-full "
-          />
-          <input
-            name="lastName"
-            type="text"
-            placeholder="Last Name"
-            className="input input-bordered w-full"
-          />
-          <input
-            name="phone"
-            type="text"
-            placeholder="Your Phone"
-            className="input input-bordered w-full"
-          />
-          <input
-            name="email"
-            type="text"
-            placeholder="Your Email"
-            defaultValue={user?.email}
-            className="input input-bordered w-full"
-            readOnly
-          />
+    <div className="card w-96 bg-base-100 shadow-xl">
+      <figure>
+        <img src="https://placeimg.com/400/225/arch" alt="Shoes" />
+      </figure>
+      <div className="card-body">
+        <h2 className="card-title">
+          Shoes!
+          <div className="badge badge-secondary">NEW</div>
+        </h2>
+        <p>If a dog chews shoes whose shoes does he choose?</p>
+        <div className="card-actions justify-end">
+          <div className="badge badge-outline">Fashion</div>
+          <div className="badge badge-outline">Products</div>
         </div>
-        <textarea
-          name="message"
-          className="textarea textarea-primary w-full mx-25 "
-          placeholder="Review"
-        ></textarea>
-        <input
-          className="btn btn-primary mb-8"
-          type="submit"
-          value="Add Your Review"
-        />
-      </form>
+      </div>
     </div>
   );
 };

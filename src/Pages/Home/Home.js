@@ -9,13 +9,18 @@ const Home = () => {
   return (
     <div>
       <p className="text-3xl font-bold text-green-500 text-center mb-4">
-        Adopt the pace of nature: her secret is patience.
+        Nature, especially wilderness, has a calming effect on the mind
       </p>
       <Banner></Banner>
       <CartData></CartData>
-      <Link className="btn btn-primary " to="/services">
-        <button>All Services</button>
-      </Link>
+      <div className="text-center  ">
+        <Link className="btn btn-primary content-center " to="/services">
+          <button className="p-8">All Services</button>
+        </Link>
+      </div>
+      <p className="text-4xl font-bold border-dashed border-2 border-green-500 text-center m-4 p-2">
+        Who I am ?
+      </p>
       <About></About>
     </div>
   );

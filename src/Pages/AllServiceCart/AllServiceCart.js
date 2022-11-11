@@ -1,7 +1,7 @@
 import React from "react";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 import "react-photo-view/dist/react-photo-view.css";
-import { Link } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const AllServiceCart = ({ services }) => {
   const { _id, img, title, price, description } = services;
@@ -19,9 +19,9 @@ const AllServiceCart = ({ services }) => {
         <p>{description.slice(0, 100)}...</p>
         <p>Price: ${price}</p>
         <div className="card-actions justify-end">
-          {/* <Link to={`/services/${_id}`}>
+          <Link to={`/services/${_id}`}>
             <button className="btn btn-primary">Details</button>
-          </Link> */}
+          </Link>
         </div>
       </div>
     </div>

@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Error from "../Error/Error";
 import Main from "../layout/Main";
+import AddService from "../Pages/AddService/AddService";
 import Blog from "../Pages/Blog/Blog";
 import DetailsService from "../Pages/DetailsService/DetailsService";
 import Home from "../Pages/Home/Home";
@@ -36,6 +37,14 @@ const router = createBrowserRouter([
         element: <Services></Services>,
       },
       {
+        path: "/addservice",
+        element: (
+          <PrivateRoute>
+            <AddService></AddService>
+          </PrivateRoute>
+        ),
+      },
+      {
         path: "/myreview",
         element: (
           <PrivateRoute>
@@ -46,8 +55,8 @@ const router = createBrowserRouter([
       {
         path: "/services/:id",
         element: <DetailsService></DetailsService>,
-        // loader: ({ params }) =>
-        //   fetch(`https://wild-clicker-server.vercel.app/services/${params.id}`),
+        loader: ({ params }) =>
+          fetch(`https://wild-clicker-server.vercel.app/services/${params.id}`),
       },
     ],
   },
