@@ -14,6 +14,21 @@ const AllReviews = ({ data }) => {
   }, [_id]);
   return (
     <div>
+      <p className="text-3xl text-center font-bold text-green-500 mb-4">
+        All Reviews
+      </p>
+      <div className="overflow-x-auto w-full">
+        <table className="table w-full">
+          <thead>
+            <tr>
+              <th>Image</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Review</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
       {reviewMyData.map((review) => (
         <ReviewCart key={_id} review={review}></ReviewCart>
       ))}
